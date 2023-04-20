@@ -1,0 +1,10 @@
+@mixin flexView($dir: row, $justifyContent: unset, $alignItems: unset) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin flexCenterView($dir: row) {
+  @include flexView($dir, center, center);
+}

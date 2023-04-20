@@ -1,0 +1,4 @@
+- /public/favicon.ico:
+- /public/logo192.png:
+- /public/logo512.png:
+  - [https://www.svgrepo.com/svg/402065/letter-m](https://www.svgrepo.com/svg/402065/letter-m) LICENSE: **MIT**

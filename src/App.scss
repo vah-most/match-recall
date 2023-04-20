@@ -1,0 +1,8 @@
+@import "./styles/display.scss";
+
+.appContainer {
+  @include flexCenterView();
+
+  height: 100vh;
+  width: 100vw;
+}
