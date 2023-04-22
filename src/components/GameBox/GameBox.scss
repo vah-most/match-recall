@@ -1,0 +1,19 @@
+@import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
+
+.gameBoxContainer {
+  @include flexCenterView(column);
+
+  .gameBoxRow {
+    @include flexCenterView(row);
+
+    .gameBoxCellContainer {
+      @include flexCenterView(column);
+
+      border: 1px solid #000000;
+      cursor: pointer;
+      height: $gameBoxCellHeight;
+      width: $gameBoxCellWidth;
+    }
+  }
+}
