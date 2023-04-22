@@ -5,4 +5,42 @@
 .scoreBoardPageContainer {
   @include flexView(column, space-between, center);
   height: calc(100% - $headerHeight - 10px);
+
+  .scoreBoardTableContainer {
+    height: calc(100% - 50px);
+    overflow: auto;
+
+    .tableHeader {
+      background-color: $tableHeaderBGColor;
+      color: $tableHeaderTitle;
+      font-size: 14px;
+      justify-content: center;
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .tableCell {
+      direction: ltr;
+      font-size: 11px;
+      text-align: center;
+    }
+  }
+
+  .scoreBoardNavigationContainer {
+    @include flexCenterView(row);
+
+    height: 50px;
+
+    .scoreBoardToWelcomeButton,
+    .scoreBoardToPlayButton {
+      @include flexCenterView(row);
+
+      background-color: $introButtonBGColor;
+      border-radius: 5px;
+      color: $introButtonTextColor;
+      min-width: 100px;
+      padding: 5px;
+      margin: 2px;
+    }
+  }
 }

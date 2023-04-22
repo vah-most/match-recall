@@ -1,3 +1,5 @@
 {
-  "ItemCount": 8
+  "ItemCount": 4,
+  "HighScoreCount": 5,
+  "HighScoreIsReverse": true
 }
