@@ -1,0 +1,8 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
+
+.scoreBoardPageContainer {
+  @include flexView(column, space-between, center);
+  height: calc(100% - $headerHeight - 10px);
+}

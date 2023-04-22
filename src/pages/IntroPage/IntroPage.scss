@@ -1,0 +1,60 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
+
+.introPageContainer {
+  @include flexView(column, flex-start, center);
+
+  background-color: $introBGColor;
+  height: calc(100% - $headerHeight);
+  width: 100%;
+
+  .introContent {
+    @include flexView(column, space-between, center);
+    height: 100%;
+    padding: 10px 0px;
+    width: 80%;
+
+    .usernameRow {
+      @include flexView(row, center, space-between);
+
+      height: 40px;
+      padding: 20px;
+
+      .usernameLabel {
+        @include flexCenterView(row);
+
+        color: $introTextColor;
+        margin-inline-end: 10px;
+      }
+
+      .usernameText {
+        @include flexCenterView(column);
+
+        color: $introTextColor;
+        cursor: pointer;
+        font-weight: 600;
+        height: 100%;
+      }
+
+      .usernameInputContainer {
+        background-color: $introInputBGColor;
+        border: 1px solid $introInputBorderColor;
+        cursor: pointer;
+        border-radius: 5px;
+
+        input {
+          color: $introLabelBorderColor;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .introButton {
+      background-color: $introButtonBGColor;
+      border-radius: 5px;
+      color: $introButtonTextColor;
+      width: 100%;
+    }
+  }
+}

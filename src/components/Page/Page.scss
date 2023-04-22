@@ -1,0 +1,13 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
+
+.pageGeneralContainer {
+  @include flexView(column, flex-start, center);
+
+  background-color: $introBGColor;
+  border: 1px solid $introHeaderBorderColor;
+  border-radius: 5px;
+  height: $boardHeight;
+  width: $boardWidth;
+}
