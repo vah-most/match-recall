@@ -4,7 +4,24 @@
   width: 100%;
 
   img {
+    display: none;
     height: 100%;
     width: 100%;
+  }
+
+  &.gameBoxCellRevealed {
+    background-color: #ffffff;
+
+    img {
+      display: block;
+    }
+  }
+
+  &.gameBoxCellMatched {
+    background-color: #f8f8b3;
+
+    img {
+      display: block;
+    }
   }
 }

@@ -26,9 +26,11 @@ interface BoardProps {
 }
 
 const GameBox = () => {
-  const [boardSpecs, setBoardSpecs] = useState<BoardSpecs | null>(null);
+  const [boardSpecs, setBoardSpecs] = useState<BoardSpecs>(initialBoardSpecs);
   const [gameBoard, setGameBoard] = useState<BoardProps[]>([]);
+  const [matchedItems, setMatchedItems] = useState<number[]>([]);
   const [revealedItems, setRevealedItems] = useState<number[]>([]);
+  const [isWaiting, setIsWaiting] = useState<boolean>(false);
 
   const initialize = useCallback((): void => {
     const itemCount = Config.ItemCount ? Config.ItemCount : 4;
@@ -73,6 +75,35 @@ const GameBox = () => {
     setBoardSpecs(specs);
   }, []);
 
+  const handleCellClick = (cellIndex: number) => {
+    if (isWaiting) return;
+    if (revealedItems.findIndex((index) => index === cellIndex) >= 0) return;
+    if (revealedItems.length < boardSpecs.matchCount) {
+      let revealed = [...revealedItems];
+      revealed.push(cellIndex);
+      setRevealedItems(revealed);
+
+      if (revealed.length >= boardSpecs.matchCount) {
+        const isMatched =
+          revealed.findIndex(
+            (index) => gameBoard[index].type !== gameBoard[revealed[0]].type
+          ) >= 0
+            ? false
+            : true;
+        if (isMatched) {
+          setMatchedItems([...matchedItems, ...revealed]);
+          setRevealedItems([]);
+        } else {
+          setIsWaiting(true);
+          setTimeout(() => {
+            setRevealedItems((revealedItems) => []);
+            setIsWaiting((isWaiting) => false);
+          }, 500);
+        }
+      }
+    }
+  };
+
   useEffect(() => {
     initialize();
   }, [initialize]);
@@ -80,22 +111,36 @@ const GameBox = () => {
   return (
     <div className="gameBoxContainer">
       {gameBoard &&
-        boardSpecs &&
+        gameBoard.length > 0 &&
         [...Array(boardSpecs.rows)].map((v, rIndex) => {
           return (
             <div key={rIndex} className="gameBoxRow">
               {[...Array(boardSpecs.cols)].map((v, cIndex) => {
+                const cellIndex = rIndex * boardSpecs.cols + cIndex;
                 return (
                   <div
                     key={`${rIndex}-${cIndex}`}
                     className="gameBoxCellContainer"
+                    onClick={() => handleCellClick(cellIndex)}
                   >
-                    <GameBoxCell isDisabled={false}>
-                      <img
-                        alt="F"
-                        src={gameBoard[rIndex * boardSpecs.cols + cIndex].image}
-                      />
-                    </GameBoxCell>
+                    <GameBoxCell
+                      isDisabled={false}
+                      img={gameBoard[cellIndex].image}
+                      isMatched={
+                        matchedItems.findIndex(
+                          (index) => cellIndex === index
+                        ) >= 0
+                          ? true
+                          : false
+                      }
+                      isRevealed={
+                        revealedItems.findIndex(
+                          (index) => cellIndex === index
+                        ) >= 0
+                          ? true
+                          : false
+                      }
+                    />
                   </div>
                 );
               })}
