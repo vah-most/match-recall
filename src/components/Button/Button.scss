@@ -1,0 +1,8 @@
+@import "../../styles/_display.scss";
+
+.buttonContainer {
+  @include flexCenterView(row);
+
+  cursor: pointer;
+  padding: 10px;
+}

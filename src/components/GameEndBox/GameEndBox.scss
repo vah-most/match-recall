@@ -1,0 +1,24 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+
+.gameEndContainer {
+  @include flexCenterView(column);
+
+  background-color: $gameEndBGColor;
+  border: 2px solid $gameEndBorderColor;
+  border-radius: 5px;
+  color: $gameEndTextColor;
+  font-size: 1.5vw;
+  font-weight: 600;
+  padding: 10px 0px;
+  width: 90%;
+
+  .gameEndButton {
+    background-color: $gameEndButtonBGColor;
+    border-radius: 5px;
+    color: $gameEndButtonTextColor;
+    margin-top: 20px;
+    padding: 10px;
+    width: 80%;
+  }
+}

@@ -6,6 +6,10 @@ import "./GameBox.scss";
 import GameBoxCell from "../GameBoxCell";
 import BoardService from "src/services/BoardSerive";
 
+interface GameBoxProps {
+  onGameEnd: (withSuccess: boolean) => void;
+}
+
 interface BoardSpecs {
   itemCount: number;
   rows: number;
@@ -25,7 +29,7 @@ interface BoardProps {
   image: any;
 }
 
-const GameBox = () => {
+const GameBox = ({ onGameEnd }: GameBoxProps) => {
   const [boardSpecs, setBoardSpecs] = useState<BoardSpecs>(initialBoardSpecs);
   const [gameBoard, setGameBoard] = useState<BoardProps[]>([]);
   const [matchedItems, setMatchedItems] = useState<number[]>([]);
@@ -91,8 +95,13 @@ const GameBox = () => {
             ? false
             : true;
         if (isMatched) {
-          setMatchedItems([...matchedItems, ...revealed]);
+          const matched = [...matchedItems, ...revealed];
+          setMatchedItems(matched);
           setRevealedItems([]);
+          if (matched.length === boardSpecs.itemCount * boardSpecs.matchCount) {
+            //Game Ended!
+            onGameEnd(true);
+          }
         } else {
           setIsWaiting(true);
           setTimeout(() => {

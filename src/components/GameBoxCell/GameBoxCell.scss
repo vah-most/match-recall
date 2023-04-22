@@ -1,5 +1,7 @@
+@import "../../styles/_colors.scss";
+
 .gameBoxCell {
-  border: 1px solid #000000;
+  border: 1px solid $gameBoxCellBorderColor;
   border-bottom-width: 0;
   height: 100%;
   outline-offset: 4px;
@@ -23,7 +25,7 @@
   }
 
   &.gameBoxCellMatched {
-    background-color: #f8f8b3;
+    background-color: $gameBoxCellMatchedBGColor;
     .gameBoxCellImage {
       background-color: transparent;
     }
@@ -39,13 +41,11 @@
   }
 
   .gameBoxCellImage {
-    background-color: #81b4d6;
-    color: black;
+    background-color: $gameBoxCellBGColor;
     transform: rotateY(180deg);
   }
 
   .gameBoxCellCover {
-    background-color: #2980b9;
-    color: white;
+    background-color: $gameBoxCellCoverBGColor;
   }
 }

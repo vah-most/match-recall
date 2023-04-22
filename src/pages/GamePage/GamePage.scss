@@ -1,0 +1,41 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+
+.gamePageContainer {
+  @include flexCenterView(column);
+
+  position: relative;
+
+  .gamePageHeader {
+    @include flexCenterView(row);
+
+    padding: 10px;
+
+    .gameSpentTime {
+      font-weight: 600;
+      padding-inline-start: 10px;
+    }
+  }
+
+  .gamePageContent {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .gameBoxLoadingCover {
+      @include flexCenterView(column);
+
+      background-color: transparent;
+      height: 100%;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+
+      img {
+        height: 140px;
+        width: 250;
+      }
+    }
+  }
+}
