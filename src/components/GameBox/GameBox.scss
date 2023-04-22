@@ -3,6 +3,7 @@
 
 .gameBoxContainer {
   @include flexCenterView(column);
+  border-bottom: 1px solid #000000;
 
   .gameBoxRow {
     @include flexCenterView(row);
@@ -10,7 +11,7 @@
     .gameBoxCellContainer {
       @include flexCenterView(column);
 
-      border: 1px solid #000000;
+      background-color: #81b4d6;
       cursor: pointer;
       height: $gameBoxCellHeight;
       width: $gameBoxCellWidth;

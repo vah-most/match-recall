@@ -1,27 +1,51 @@
 .gameBoxCell {
-  background-color: #76b5b8;
+  border: 1px solid #000000;
+  border-bottom-width: 0;
   height: 100%;
+  outline-offset: 4px;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
   width: 100%;
 
-  img {
-    display: none;
+  .gameBoxCellImage {
     height: 100%;
     width: 100%;
-  }
-
-  &.gameBoxCellRevealed {
-    background-color: #ffffff;
 
     img {
-      display: block;
+      height: 100%;
+      width: 100%;
     }
+  }
+
+  &.gameBoxCellVisible {
+    transform: rotateY(180deg);
   }
 
   &.gameBoxCellMatched {
     background-color: #f8f8b3;
-
-    img {
-      display: block;
+    .gameBoxCellImage {
+      background-color: transparent;
     }
+  }
+
+  .gameBoxCellImage,
+  .gameBoxCellCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .gameBoxCellImage {
+    background-color: #81b4d6;
+    color: black;
+    transform: rotateY(180deg);
+  }
+
+  .gameBoxCellCover {
+    background-color: #2980b9;
+    color: white;
   }
 }
