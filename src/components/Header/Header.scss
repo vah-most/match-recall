@@ -1,0 +1,14 @@
+@import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
+
+.pageheader {
+  @include flexCenterView(row);
+
+  background-color: $introHeaderBGColor;
+  color: $introHeaderTextColor;
+  font-size: min(max(2vw, 12px), 20px);
+  font-weight: 600;
+  height: $headerHeight;
+  width: 100%;
+}

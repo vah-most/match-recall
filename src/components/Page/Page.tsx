@@ -4,6 +4,7 @@ import { useLocation } from "react-router";
 
 import { RootState } from "src/store";
 import IntroPage from "src/pages/IntroPage";
+import Header from "../Header";
 
 import "./Page.scss";
 
@@ -19,6 +20,7 @@ function Page({ children, className = "" }: PageProps): ReactElement {
 
   return (
     <div className={`pageGeneralContainer ${className}`}>
+      <Header />
       {canPlay || location.pathname !== "/play" ? (
         <React.Fragment>{children}</React.Fragment>
       ) : (
