@@ -4,10 +4,10 @@
 
 .pageGeneralContainer {
   @include flexView(column, flex-start, center);
+  @include woodenFrame();
 
-  background-color: $introBGColor;
-  border: 1px solid $introHeaderBorderColor;
-  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: $pageBGColor;
   height: $boardHeight;
   width: $boardWidth;
 }

@@ -1,10 +1,14 @@
 @import "../../styles/_colors.scss";
 @import "../../styles/_display.scss";
+@import "../../styles/_sizes.scss";
 
 .gamePageContainer {
   @include flexCenterView(column);
 
+  background-color: $gameBGColor;
+  height: calc(100% - $headerHeight);
   position: relative;
+  width: 100%;
 
   .gamePageHeader {
     @include flexCenterView(row);
@@ -12,15 +16,15 @@
     padding: 10px;
 
     .gameSpentTime {
-      font-weight: 600;
+      font-weight: 400;
       padding-inline-start: 10px;
     }
   }
 
   .gamePageContent {
     height: 100%;
-    width: 100%;
     position: relative;
+    width: 100%;
 
     .gameBoxLoadingCover {
       @include flexCenterView(column);
@@ -31,11 +35,6 @@
       position: absolute;
       top: 0px;
       width: 100%;
-
-      img {
-        height: 140px;
-        width: 250;
-      }
     }
   }
 }

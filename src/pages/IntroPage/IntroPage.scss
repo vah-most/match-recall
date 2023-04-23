@@ -11,6 +11,7 @@
 
   .introContent {
     @include flexView(column, space-between, center);
+
     height: 100%;
     padding: 10px 0px;
     width: 80%;
@@ -44,16 +45,13 @@
         border-radius: 5px;
 
         input {
-          color: $introLabelBorderColor;
+          color: $introTextColor;
           cursor: pointer;
         }
       }
     }
 
     .introButton {
-      background-color: $introButtonBGColor;
-      border-radius: 5px;
-      color: $introButtonTextColor;
       width: 100%;
     }
   }

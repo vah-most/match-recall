@@ -63,6 +63,7 @@ const ScoreBoardPage = (): ReactElement => {
         <AimoTable
           autoAddRowNumbers={true}
           cellClassName="tableCell"
+          className="scoreBoardTable"
           columnProps={tableColumnProps}
           data={scoreBoard.reverse()}
           headerClassName="tableHeader"

@@ -4,10 +4,13 @@
 
 .gameBoxContainer {
   @include flexCenterView(column);
-  border-bottom: 1px solid $gameBoxBorderColor;
 
   .gameBoxRow {
     @include flexCenterView(row);
+
+    &:last-child {
+      border-bottom: 1px solid $gameBoxCellBorderColor;
+    }
 
     .gameBoxCellContainer {
       @include flexCenterView(column);

@@ -1,3 +1,5 @@
+@import "./_colors.scss";
+
 @mixin flexView($dir: row, $justifyContent: unset, $alignItems: unset) {
   display: flex;
   flex-direction: $dir;
@@ -7,4 +9,22 @@
 
 @mixin flexCenterView($dir: row) {
   @include flexView($dir, center, center);
+}
+
+@mixin woodenFrame(
+  $borderWidth: 6px,
+  $outLineWidth: 2px,
+  $spreadRadius1: 50px,
+  $spreadRadius2: 11px,
+  $spreadRadius3: 30px,
+  $borderColor: $frameMainColor,
+  $shadowColor: $frameLightColor
+) {
+  border: 1px double $borderColor;
+  border-width: $borderWidth;
+  box-shadow: 0 0 0 $spreadRadius1 rgba(244, 240, 236, 0.4) inset,
+    0 0 0 $spreadRadius2 $shadowColor,
+    0 0 $spreadRadius3 rgba(0, 0, 0, 0.8) inset;
+  outline: $outLineWidth solid $frameOutlineColor;
+  outline-offset: 0px;
 }

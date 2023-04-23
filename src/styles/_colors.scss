@@ -1,36 +1,44 @@
 @import "./palette";
 
-$gameBoxBGColor: $mainLightColor;
-$gameBoxBorderColor: #000000;
-$gameBoxCoverBGColor: $mainLightColor;
-$gameBoxBGColor: $mainLightColor;
+$appBGColor: $beigeColor;
 
-$gameBoxCellBGColor: #81b4d6;
-$gameBoxCellBorderColor: #000000;
-$gameBoxCellCoverBGColor: #2980b9;
-$gameBoxCellMatchedBGColor: #f8f8b3;
+$buttonBGGradient: linear-gradient(
+  $normalBrownColor,
+  $lighterBrownColor,
+  $normalBrownColor
+);
+$buttonBorderColor: $darkBrownColor;
+$buttonTextColor: $maroonColor;
 
-$gameEndBGColor: $mainLightColor;
-$gameEndBorderColor: $mainDarkColor;
-$gameEndButtonBGColor: $mainDarkColor;
-$gameEndButtonTextColor: $mainLightColor;
-$gameEndTextColor: $mainDarkTextColor;
+$frameMainColor: $darkBrownColor;
+$frameLightColor: $lightBrownColor;
+$frameOutlineColor: $darkGrayColor;
 
-$introBGColor: $mainLightColor;
+$gameBGColor: $beigeColor;
 
-$introButtonBGColor: $mainDarkColor;
-$introButtonTextColor: $mainLightColor;
+$gameBoxCellBGColor: $veryLightBrownColor;
+$gameBoxCellBorderColor: $blackColor;
+$gameBoxCellCoverBGColor: $normalBrownColor;
+$gameBoxCellMatchedBGColor: $lightYellowColor;
 
-$introHeaderBGColor: $mainDarkColor;
-$introHeaderBorderColor: $mainDarkColor;
-$introHeaderTextColor: $mainLightColor;
+$gameEndBGColor: $somewhatLightBrownColor;
+$gameEndBorderColor: $darkBrownColor;
+$gameEndTextColor: $maroonColor;
 
-$introInputBGColor: $veryLightColor;
-$introInputBorderColor: $mainDarkColor;
+$headerBGGradient: linear-gradient(
+  $normalBrownColor,
+  $lighterBrownColor,
+  $normalBrownColor
+);
+$headerBorderColor: $darkBrownColor;
+$headerTextColor: $maroonColor;
 
-$introLabelBorderColor: $mainDarkTextColor;
+$introBGColor: $beigeColor;
+$introTextColor: $darkBrownColor;
+$introInputBGColor: $whiteColor;
+$introInputBorderColor: $darkBrownColor;
 
-$introTextColor: $mainDarkTextColor;
+$tableHeaderBGColor: $normalBrownColor;
+$tableHeaderTitleColor: $beigeColor;
 
-$tableHeaderBGColor: $mainDarkColor;
-$tableHeaderTitle: $mainLightColor;
+$pageBGColor: $normalBrownColor;

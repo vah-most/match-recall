@@ -1,22 +1,26 @@
 @import "../../styles/_colors.scss";
+@import "../../styles/_display.scss";
 
 .gameBoxCell {
+  @include flexCenterView(row);
+  @include woodenFrame(1px, 1px, 5px, 2px, 3px);
+
   border: 1px solid $gameBoxCellBorderColor;
   border-bottom-width: 0;
   height: 100%;
-  outline-offset: 4px;
   position: relative;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
+  transition: transform 0.8s;
   width: 100%;
 
   .gameBoxCellImage {
+    @include flexCenterView(row);
     height: 100%;
     width: 100%;
 
     img {
-      height: 100%;
-      width: 100%;
+      height: 70%;
+      width: 70%;
     }
   }
 
@@ -26,6 +30,7 @@
 
   &.gameBoxCellMatched {
     background-color: $gameBoxCellMatchedBGColor;
+
     .gameBoxCellImage {
       background-color: transparent;
     }
@@ -33,11 +38,11 @@
 
   .gameBoxCellImage,
   .gameBoxCellCover {
+    backface-visibility: hidden;
+    height: 100%;
     position: absolute;
     width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
 
   .gameBoxCellImage {

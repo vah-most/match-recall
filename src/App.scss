@@ -3,6 +3,9 @@
 .appContainer {
   @include flexCenterView();
 
+  background-color: $appBGColor;
+  font-family: Blomberg;
+  font-weight: 100;
   height: 100vh;
   width: 100vw;
 }

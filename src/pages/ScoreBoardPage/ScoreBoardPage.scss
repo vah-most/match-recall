@@ -4,15 +4,19 @@
 
 .scoreBoardPageContainer {
   @include flexView(column, space-between, center);
+
   height: calc(100% - $headerHeight - 10px);
 
   .scoreBoardTableContainer {
-    height: calc(100% - 50px);
-    overflow: auto;
+    min-height: calc(100% - $headerHeight);
+
+    .scoreBoardTable {
+      border-width: 0px;
+    }
 
     .tableHeader {
       background-color: $tableHeaderBGColor;
-      color: $tableHeaderTitle;
+      color: $tableHeaderTitleColor;
       font-size: 14px;
       justify-content: center;
       padding: 10px 15px;
@@ -35,12 +39,9 @@
     .scoreBoardToPlayButton {
       @include flexCenterView(row);
 
-      background-color: $introButtonBGColor;
-      border-radius: 5px;
-      color: $introButtonTextColor;
+      margin: 2px;
       min-width: 100px;
       padding: 5px;
-      margin: 2px;
     }
   }
 }

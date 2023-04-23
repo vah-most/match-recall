@@ -1,8 +1,13 @@
+@import "../../styles/_colors.scss";
 @import "../../styles/_display.scss";
 
 .buttonContainer {
   @include flexCenterView(row);
 
+  background-image: $buttonBGGradient;
+  border: 4px double $buttonBorderColor;
+  border-radius: 5px;
+  color: $buttonTextColor;
   cursor: pointer;
   padding: 10px;
 }
