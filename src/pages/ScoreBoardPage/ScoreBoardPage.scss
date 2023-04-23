@@ -5,7 +5,9 @@
 .scoreBoardPageContainer {
   @include flexView(column, space-between, center);
 
+  background-color: $scoreBoardBGColor;
   height: calc(100% - $headerHeight - 10px);
+  width: 100%;
 
   .scoreBoardTableContainer {
     min-height: calc(100% - $headerHeight);

@@ -69,7 +69,7 @@ const IntroPage = (): ReactElement => {
                 value={username.value}
               />
             ) : (
-              <div className="usernameText">{username.value}!</div>
+              <div className="usernameText">{username.value}</div>
             )}
           </div>
         </div>
